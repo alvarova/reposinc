@@ -38,7 +38,7 @@ stage("::Iniciando::",4)
 if len(sys.argv) > 1:
     additional_param = sys.argv[1]
 else:
-    stage("Ejecutando sin parametro de rango de red",2)
+    stage("Ejecutando sin parametro de rango de red genérico",2)
     additional_param = "10.7.6.1-254"
 
 stage("--Scan de red--",4)
@@ -79,7 +79,7 @@ with open('output.txt', 'w') as outfile:
                 mac_address = mac_line.split('MAC Address: ')[1].split(' ')[0]
 
                 # Escribir el par IP/MAC en el archivo de salida
-                #outfile.write(ip_address + '|' + mac_address + '\n')
+                outfile.write(ip_address + '|' + mac_address + '\n')
                 print (ip_address + '|' + mac_address + '\n')
                 
 
